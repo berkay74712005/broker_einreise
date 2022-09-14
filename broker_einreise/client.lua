@@ -16,7 +16,7 @@ AddEventHandler('broker_einreise:StartQuiz', function()
 end)
 
 RegisterNUICallback('QuizSuccess', function(data, cb)
-	TriggerServerEvent('broker_einreise:ChangeStatus', data.status
+	TriggerServerEvent('broker_einreise:ChangeStatus', data.status)
 	SetNuiFocus(false, false)
 	cb('ok')
 end)
