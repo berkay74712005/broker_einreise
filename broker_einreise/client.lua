@@ -2,10 +2,6 @@ AddEventHandler('playerSpawned', function()
 	TriggerServerEvent('broker_einreise:CheckStatus')
 end)
 
---[[CreateThread(function()
-    TriggerServerEvent('broker_einreise:CheckStatus')
-end)--]]
-
 function StartQuiz()
     SetNuiFocus(true, true)
 	SendNUIMessage({
@@ -21,5 +17,6 @@ end)
 
 RegisterNUICallback('QuizSuccess', function(data, cb)
 	TriggerServerEvent('broker_einreise:ChangeStatus', data.status)
+	SetNuiFocus(false, false)
 	cb('ok')
 end)

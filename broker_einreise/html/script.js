@@ -78,6 +78,7 @@ nextBtn.addEventListener(
                 $.post(`http://${GetParentResourceName()}/QuizSuccess`, JSON.stringify({
                     status: 1
                 }));
+                $("body").css("display", "none");
             } else {
                 $.post(`http://${GetParentResourceName()}/QuizSuccess`, JSON.stringify({
                     status: 'Fail'
